@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <title>真帅</title>
-     <link href="base.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
-     <style type="text/css">
-     h1{font-size: 120px;
-     color: rgb(0, 217, 255);
-     text-align: center;}
-     </style>
-<h1>很强嘛兄弟</h1>
-    <P>我是一个p标签</P>
-    <style type="text/css">
-    div{font-size: 10px;
-    color: indigo;
-    text-align: center;}
-    </style>
-    <div>这是一div标签</div>
-    <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1275205058,1900854509&fm=26&gp=0.jpg" alt="图片不见了" title="小怪兽">
-<h2>二级标题在这</h2>
-    <link href="base2.css" rel="stylesheet" type="text/css">
-    <p>浪里小白条</p>
-    <a href="http://www.baidu.com" title="强者的世界">强者的世界</a>
-    <input type="text"/>
-    <ul>
-         <li>水光潋滟晴方好</li>
-         <li>山色空蒙雨亦奇</li>
-         <li>欲把西湖比西子</li> 
-         <li>浓妆淡抹总相宜</li>
-         </ul>
-     <ol>
-         <li>水光潋滟晴方好</li>
-         <li>山色空蒙雨亦奇</li>
-         <li>欲把西湖比西子</li> 
-         <li>浓妆淡抹总相宜</li>
-     </ol>>
-<h3>我的发言完毕</h3>>
+  <div>
+    <p>刚才有个朋友问我：<span>英</span>老师，发生甚么事了？</p>
+    <p>给我发来两张截图，</p>
+    <p>我一看！噢，原来是昨晚有个年轻人，<span>5nm</span>的，说能不能教教我<span>挤牙膏大法</span>。</p>
+    <p>我说可以，我说你用<span>Arm</span>的死劲不好用，他不服气。</p>
+    <p>我说小朋友你<span>两个核贵不过我一个核</span>，他说你这也没用，我说我这个有用。</p>
+    <p>这是化劲，传统<span>摩尔定律</span>是讲化劲的，四两八千金，200多核的<span>英国大伟达</span>都干不过我一个核。</p>
+    <p>他说要和我试试，我说可以。</p>
+    <p>我一说，他啪就做出来了，很快啊。</p>
+    <p>然后上来就是一个<span>4x CPU</span>，一个<span>6x GPU</span>，一个<span>15x ML</span>！</p>
+    <p>我全部防出去了，防出去以后自然是传统<span>挤牙膏</span>宜点到为止，右拳指着<span>软件兼容</span>，没打他。</p>
+    <p>因为这时间按传统他已经输了，他也承认我先打到他要害。我收拳的时间不打了，他突然袭击<span>“不涨价”</span>来打我脸。</p>
+    <p>我大E了啊，没有闪。</p>
+    <p>两分多钟以后，当时流眼泪了，捂着眼我就停停。</p>
+    <p>我说小<span>Apple</span>你不讲<span>摩尔定律</span>。他忙说对不起，不懂规矩啊，他说他是乱打的。</p>
+    <p>他可不是乱打的，<span>CPU GPU</span>训练有素，后来他说在<span>手机</span>上练过十几年<span>芯片</span>，看来是有备而来。</p>
+    <p>这个<span>Apple</span>，不讲武德。来，骗！来，偷袭！我这个<span>14nm+++</span>的老同志。</p>
+    <p>这好吗？这不好。我劝这个<span>Apple</span>，耗子尾汁，好好反思，以后不要再犯这样的聪明，小聪明。</p>
+    <p><span>IT界</span>要以核为贵，要讲<span>摩尔定律</span>，不要搞窝里斗！</p>
+    <p>谢谢朋友们！</p>
+    <button onclick="getspan()">查看全文</button>
+  </div>
+  <script>
+      function getspan(){
+    var spanArray=document.querySelectorAll('span')
+
+    if(spanArray[0].style.backgroundColor == 'black'){
+        for(var j=0;j<spanArray.length;j++){
+        spanArray[j].style.backgroundColor='white'
+
+    }
+    }else{
+        for(var j=0;j<spanArray.length;j++){
+        spanArray[j].style.backgroundColor='black'
+
+    }
+    }
+
+
+    
+
+    
+}
+  </script>
 </body>
 </html>
-    

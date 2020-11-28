@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="326" height="135" border="1" background="" bgcolor="CCCCCC" id="table_main">
+          <tr>
+            <td width="110">&nbsp;</td>
+            <td width="98">&nbsp;</td>
+            <td width="96">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        <input type=button value="A按钮" onclick="mychange()">
+        <input type=button value="B按钮" onclick="mychange2()">
+        <input type=button value="C按钮" onclick="mychange3()">
+        <input type=button value="D按钮" onclick="mychange4()">
+         
+         
+        <script>
+            function mychange(num){
+                document.getElementById("table_main").style.background="#f48282";
+            }
+        </script>
+        <script>
+            function mychange2(num){
+                document.getElementById("table_main").style.background="#f4b963";
+            }
+        </script>
+        <script>
+            function mychange3(num){
+                document.getElementById("table_main").style.background="#4cb5f7";
+            }
+        </script>
+        <script>
+            function mychange4(num){
+                document.getElementById("table_main").style.background="#a4f7a4";
+            }
+        </script>
+</body>
+</html>

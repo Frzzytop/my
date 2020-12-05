@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>老网抑云了</title>
+    <style type="text/css">
+
+        .user{
+        
+        background-image: url(picture.jpeg);/*设置小图标*/
+        
+        background-size: 150px 150px;/*小图标的大小*/
+        
+        background-position:center;/*小图标在input的位置*/
+        
+        background-repeat: no-repeat;/*背景小图标不重复*/
+        height: 150px;
+        
+        /*设置input内边距*/
+        
+        /*设置input样式好看*/
+        
+        border:1px solid #ddd;
+        margin: 100px 0px;
+        
+        width: 150px;
+        }
+        img{
+          width: 100px;
+        }
+        .continer{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          text-align: center;
+          width: 100%;
+        }
+        .test{
+          width: 100px;
+           font-size: small;
+           display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           text-align: center;
+           margin-left: 25px;
+           margin-right: 25px;
+        }
+        body{
+          background-color: rgb(255, 225, 243);
+        }
+
+        
+        </style>
+</head>
+<body>
+   <div  class="music1">
+        <button class="user"></button>
+    </div>
+    <div class="continer"></div>
+    <script>
+      let res;//申明res是全局的var，const不用
+        var user=document.getElementsByClassName("user");
+const xhr = new XMLHttpRequest();
+xhr.open('get', 'http://musicapi.leanapp.cn/personalized',true);
+xhr.onreadystatechange = () => {
+  if (xhr.readyState === 4) {
+    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+       res = JSON.parse(xhr.responseText);
+      console.log(res);
+      console.log('请求成功');
+    } else {
+      console.log('请求失败');
+    }
+  }
+};
+
+//这是
+// 简单做个封装，就是把它放到一个函数中去，要用的时候直接调用函数就行了，这就是封装的意义
+//1function useXhr (method, url, successFunc, failFunc) {
+//1  const xhr = new XMLHttpRequest();
+
+  // xhr.open('get', 'http://musicapi.leanapp.cn/personalized',true);
+  // 这里用函数参数来替换下，实现多次复用
+//1  xhr.open(method, url, true);
+
+//1  xhr.onreadystatechange = () => {
+//1    if (xhr.readyState === 4) {
+//1      if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+//1        const res = JSON.parse(xhr.responseText);
+//1        console.log(res);
+//1        console.log('请求成功');
+//1        // 这时候就可以执行成功得到响应的函数了,同时将响应的内容res传进去，那么在successFunc中就可以获取到这个响应res了
+//1        successFunc(res);
+//1      } else {
+//1        console.log('请求失败');
+        // 同样可以执行失败时候的函数
+//1        failFunc();
+//1      }
+//1    }
+//1  };
+
+//1}
+
+// xhr.send();
+// let {result}=res
+// const xhr1 = new XMLHttpRequest();
+// xhr.open('get', 'http://musicapi.leanapp.cn/personalized',true);
+// xhr.onreadystatechange = () => {
+//   if (xhr.readyState === 4) {
+//     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+//       const result = JSON.parse(xhr.responseText);
+//       console.log(result);
+//       console.log('请求成功');
+//     } else {
+//       console.log('请求失败');
+//     }
+//   }
+// };
+// 上面注释的这一块代码就可以这样写了
+//1useXhr('get', 'http://musicapi.leanapp.cn/personalized', 
+//1(res)=>console.log('我是successFunc'), ()=>console.log('我是failFunc', ))//这里调用的函数是上面注释的，以后有代码多次利用切复杂是，可以进行封装函数
+//1user.addEventListener('click',()=>{
+//1  xhr.open('get', 'http://musicapi.leanapp.cn/personalized',true);
+  xhr.send();
+
+//1});
+const handleRes=()=>{ 
+    const continer=document.querySelector('.continer');
+    console.log(res)
+    const { result }=res;
+    localStorage.setItem('res',JSON.stringify(res));
+    console.log(result)
+    let html='';
+    result.forEach(item => {
+  html+=`
+  <div>
+  <img src="${item.picUrl}" class="img"/>
+  <div class="test">${item.name}</div>
+  </div>`;
+
+});
+continer.innerHTML=html;
+};
+console.log(user)//打出user检查问题
+user[0].addEventListener('click',handleRes);//[0]直接取出第一个值，这里的user本事为一个数组，第0项为button成功绑定按钮
+
+    </script>
+</body>
+</html>
+
